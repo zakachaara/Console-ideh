@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main id="container">
+        <div id="terminal">
+          <!-- Terminal Bar -->       
+          <section id="terminal__bar">          
+            <div id="bar__buttons">            
+              <button class="bar__button" id="bar__button--exit">&#10005;</button>            
+              <button class="bar__button">&#9472;</button>                
+              <button class="bar__button">&#9723;</button>          
+            </div>          
+            <p id="bar__user">v6/ideh/registre/@cit.inpt: ~</p>        
+          </section>        
+          <!-- Terminal Body -->        
+          <section id="terminal__body">          
+            <!-- <div id="terminal__prompt">             
+              <span id="terminal__prompt--user">ideh.v6@cit.inpt: </span>            
+              <span id="terminal__prompt--location">~</span>            
+              <span id="terminal__prompt--bling">$</span>             
+              <span> ideh --version </span>        
+             <span id="terminal__prompt--cursor"></span> 
+            </div> 
+            <div class="Content"> 
+                <p>     v6.0.1 next update 19.01.25 </p>
+                <p>     run --help for more information </p>
+            </div>-->
+            <div id="terminal__prompt">            
+                <span id="terminal__prompt--user">ideh.v6@cit.inpt: </span>            
+                <span id="terminal__prompt--location">~</span>            
+                <span id="terminal__prompt--bling">$</span>             
+                <span> ideh --help </span>        
+                <!-- <span id="terminal__prompt--cursor"></span>  -->
+            </div> 
+            <div class="Content">
+                <p>All commands available are here: <span class="prompt">ideh [COMMAND] [OPTION]</span></p>
+                <p>=====> COMMAND:</p>
+                <p class="cmd"><span>init</span>: initialize your candidature to take part in the next edition of IDEH</p>
+                <p class="cmd"><span>add</span> <span>-fn</span> <span>-ln</span> <span>-email</span>: add a team member</p>
+                <p class="cmd"><span>push</span>: send your candidature to preview</p>
+            
+                <p>=====> OPTIONS:</p>
+                <p class="cmd"><span>--name</span>: Give a name to your team; if not mentioned, you will be attributed a name as "Team_<school>_number"</p>
+                <p class="cmd"><span>--help</span>: Show this help panel</p>
+                <p class="cmd"><span>-fn</span>: First name</p>
+                <p class="cmd"><span>-ln</span>: Last name</p>
+                <p class="cmd"><span>-email</span>: Email</p>
+                <p class="cmd"><span>--leader</span>: To indicate the leader of the team</p>
+                <p class="cmd"><span>--school</span>: When you try to add a member, you should mention the school</p>
+            
+                <p>========> Example:</p>
+                <p>
+                  <span id="first">add</span> <span class="option">-fn</span> John 
+                  <span class="option">-ln</span> Doe 
+                  <span class="option">--school</span> INPT 
+                  <span class="option">-email</span> john.doe@mail.mail 
+                  <span class="option">--leader</span>
+                </p>
+            
+                <p class="note">NB:<br>
+                  - You are allowed to have one leader, and make sure all provided information is correct; if not, you may be disqualified automatically.<br>
+                  - You are allowed to add four members; one of them must be the leader. If not mentioned, it will automatically be attributed to the first added person.<br>
+                  - <span class="prompt">ideh push</span> works only and if only there are four members.<br>
+                  - If there is a problem with your candidature, please let us know {*_*}.<br>
+                  - Start now by running: <span class="prompt">ideh init</span>
+                </p>
+              </div>
+            <div class="console-wrapper">
+                <span id="terminal__prompt--user">ideh.v6@cit.inpt: </span>            
+                <span id="terminal__prompt--location">~</span>            
+                <span id="terminal__prompt--bling">$</span>   
+                <span class="hidden-text" id="hidden-text"></span>
+                <input type="text" id="console-input" class="console-input" autofocus>
+                <!-- <span id="terminal__prompt--cursor"></span>  -->
+
+              </div>
+                   
+          </section>      
+        </div>    
+      </main>
+      <script>
+    const input = document.getElementById('console-input');
+    const hiddenText = document.getElementById('hidden-text');
+    // const wrapper = document.querySelector('.console-wrapper');
+
+    input.addEventListener('input', () => {
+      hiddenText.textContent = input.value || '|';
+      input.style.width = hiddenText.offsetWidth + 'px';
+    //   wrapper.style.left = hiddenText.offsetWidth + 'px'; // Move caret position dynamically
+    });
+      </script>
+</body>
+</html>
