@@ -9,7 +9,6 @@
 <body>
     <main id="container">
         <div id="terminal">
-          <!-- Terminal Bar -->       
           <section id="terminal__bar">          
             <div id="bar__buttons">            
               <button class="bar__button" id="bar__button--exit">&#10005;</button>            
@@ -18,25 +17,13 @@
             </div>          
             <p id="bar__user">v6/ideh/registre/@cit.inpt: ~</p>        
           </section>        
-          <!-- Terminal Body -->        
           <section id="terminal__body">          
-            <!-- <div id="terminal__prompt">             
-              <span id="terminal__prompt--user">ideh.v6@cit.inpt: </span>            
-              <span id="terminal__prompt--location">~</span>            
-              <span id="terminal__prompt--bling">$</span>             
-              <span> ideh --version </span>        
-             <span id="terminal__prompt--cursor"></span> 
-            </div> 
-            <div class="Content"> 
-                <p>     v6.0.1 next update 19.01.25 </p>
-                <p>     run --help for more information </p>
-            </div>-->
+            
             <div id="terminal__prompt">            
                 <span id="terminal__prompt--user">ideh.v6@cit.inpt: </span>            
                 <span id="terminal__prompt--location">~</span>            
                 <span id="terminal__prompt--bling">$</span>             
                 <span> ideh --help </span>        
-                <!-- <span id="terminal__prompt--cursor"></span>  -->
             </div> 
             <div class="Content">
                 <p>All commands available are here: <span class="prompt">ideh [COMMAND] [OPTION]</span></p>
@@ -66,7 +53,7 @@
                 <p class="note">NB:<br>
                   - You are allowed to have one leader, and make sure all provided information is correct; if not, you may be disqualified automatically.<br>
                   - You are allowed to add four members; one of them must be the leader. If not mentioned, it will automatically be attributed to the first added person.<br>
-                  - <span class="prompt">ideh push</span> works only and if only there are four members.<br>
+                  - <span class="prompt">ideh push</span> works if and only there are four members.<br>
                   - If there is a problem with your candidature, please let us know {*_*}.<br>
                   - Start now by running: <span class="prompt">ideh init</span>
                 </p>
@@ -77,7 +64,6 @@
                 <span id="terminal__prompt--bling">$</span>   
                 <span class="hidden-text" id="hidden-text"></span>
                 <input type="text" id="console-input" class="console-input" autofocus>
-                <!-- <span id="terminal__prompt--cursor"></span>  -->
 
               </div>
                    
@@ -87,12 +73,10 @@
       <script>
     const input = document.getElementById('console-input');
     const hiddenText = document.getElementById('hidden-text');
-    // const wrapper = document.querySelector('.console-wrapper');
 
     input.addEventListener('input', () => {
       hiddenText.textContent = input.value || '|';
       input.style.width = hiddenText.offsetWidth + 'px';
-    //   wrapper.style.left = hiddenText.offsetWidth + 'px'; // Move caret position dynamically
     });
       </script>
 </body>

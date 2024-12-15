@@ -87,60 +87,50 @@ body {
 #terminal__prompt--bling {  
   color: #dddddd;
 }
-#terminal__prompt--cursor {  
+/* #terminal__prompt--cursor {  
   display: block;  
   height: 17px;  
   width: 8px;  
   margin-left: 9px;  
   animation: blink 1200ms linear infinite;
-} 
+}  */
 .Content {
     color: #ffffff;
-    white-space-collapse: collapse; /* Preserve spaces and newlines */
+    white-space-collapse: collapse; 
     font-size: 16px;
   }
 p {
     margin: 0;
 }
-  /* Command title */
+  
   .cmd {
-    margin-left: 2rem; /* Indent for better readability */
-    color: red; /* Command text in red */
+    margin-left: 2rem; 
+    color: red;
   }
 
-  /* Highlighted options */
+  
   .cmd span {
     font-weight: bold;
-    color: #ffcc00; /* Yellow for commands and options */
+    color: #ffcc00; 
   }
 
-  /* Example formatting */
   #first {
-    color: #ffcc00; /* Yellow for main commands */
+    color: #ffcc00; 
   }
 
   .option {
-    color: #ffcc00; /* Options styled in yellow */
+    color: #ffcc00; 
   }
 
-  /* Notes formatting */
   .note {
-    /* margin-top: 1rem; */
+    
     font-size: 14px;
-    color: #999; /* Gray for less emphasized notes */
+    color: #999; 
   }
 
-  /* Console-like prompt */
   .prompt {
     color: #ffcc00;
   }
-/* .Content p {
-    color: #ffffff;
-    display: block;
-    padding: 0;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-} */
 
 span{
     color: #ff0000;
