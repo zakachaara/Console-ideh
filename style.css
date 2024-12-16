@@ -212,7 +212,7 @@ span{
 .line-input:disabled {
   color: #777;
 }
-.finalNote {
+#finalNote {
   color: #ffcc00;
   text-decoration: underline rgb(179, 238, 42);
 }
