@@ -7,7 +7,29 @@ function adjustInputWidth(inputElement, hiddenTextElement) {
     inputElement.style.width = hiddenTextElement.offsetWidth + "px";
   });
 }
-
+let data = {
+  "team": "",
+  "school": "",
+  "members": {
+    "leader": {
+      "name": "",
+      "email": "",
+      "phone": ""
+    },
+    "2nd-member": {
+      "name": "",
+      "email": ""
+    },
+    "3rd-member": {
+      "name": "",
+      "email": ""
+    },
+    "4th-member": {
+      "name": "",
+      "email": ""
+    }
+  }
+};
 const lines = [
   "[1]_ Team name\t\t\t:",
   "[2]_ Represented School \t:",
@@ -63,12 +85,48 @@ function addLine(index) {
   inputField.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       inputField.disabled = true;
-
+      // Store the value in the correct part of the JSON object
+      switch (index) {
+        case 0:
+          data.team = inputField.value.trim();
+          break;
+        case 1:
+          data.school = inputField.value.trim();
+          break;
+        case 2:
+          data.members.leader.name = inputField.value.trim();
+          break;
+        case 3:
+          data.members.leader.email = inputField.value.trim();
+          break;
+        case 4:
+          data.members.leader.phone = inputField.value.trim();
+          break;
+        case 5:
+          data.members["2nd-member"].name = inputField.value.trim();
+          break;
+        case 6:
+          data.members["2nd-member"].email = inputField.value.trim();
+          break;
+        case 7:
+          data.members["3rd-member"].name = inputField.value.trim();
+          break;
+        case 8:
+          data.members["3rd-member"].email = inputField.value.trim();
+          break;
+        case 9:
+          data.members["4th-member"].name = inputField.value.trim();
+          break;
+        case 10:
+          data.members["4th-member"].email = inputField.value.trim();
+          break;
+      }
       currentLine++;
       if (currentLine < lines.length) {
         addLine(currentLine);
       } else {
         document.getElementById("finalNote").style.display = "block";
+        console.log("Final Data: ", JSON.stringify(data, null, 2));
         i++; // Increment the index for the new input
         const terminal = document.getElementById("terminal__body");
         terminal.appendChild(document.createElement("br")); // Add a line break
@@ -109,7 +167,10 @@ function addInputListeners(inputElement, hiddenTextElement) {
         document.activeElement.disabled = true; // Disable current input
         addLine(currentLine);
       } else if (textvalue === "ideh push") {
-        document.getElementById("terminal").style.display = "none";
+        let terminal = document.getElementById("terminal__body");
+        terminal.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        terminal.style.color = "#ffcc00";
+
       } else {
         inputElement.disabled = true;
         i++; // Increment the index for the new input
