@@ -143,7 +143,7 @@ span{
     position: relative;
   }
 
-  #console-input {
+  [id^="console-input-"] {
     background: none;
     border: none;
     outline: none;
@@ -152,24 +152,39 @@ span{
     font-size: 16px;
     white-space: nowrap; /* Prevent text wrapping */
     caret-color: transparent; /* Hide default caret */
-    width: 1px;
+    width: 5px;
     min-width: 1px;
     position: relative;
   }
 
-  /* Simulated caret */
   .console-wrapper::after {
+    content: "";
+    display: inline-block;
+    width: 0; /* Pas de caret par défaut */
+}
+
+.console-wrapper.active::after {
+  content: '';
+  display: inline-block;
+  width: 5px; 
+  height: 1em; 
+  background-color: red; 
+  position: absolute;
+  animation: blink 0.8s infinite;
+}
+  /* Simulated caret */
+  /* .console-wrapper::after {
     content: '';
     display: inline-block;
-    width: 5px; /* Width of the caret */
-    height: 1em; /* Height matches the text */
-    background-color: red; /* Red caret color */
+    width: 5px; 
+    height: 1em; 
+    background-color: red; 
     position: absolute;
-    animation: blink 0.8s infinite;
-  }
+    animation: blink 0.8s infinite; 
+  } */
 
   /* Position the caret after the text */
-  .hidden-text {
+ [id^="hidden-text-"] {
     visibility: hidden;
     white-space: nowrap;
     position: absolute;
@@ -177,6 +192,30 @@ span{
     font-size: 16px;
   }
  
+
+.line-wrapper {
+  margin: 5px 0;
+  
+}
+
+.line-input {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  font-size: 16px;
+  margin-left: 10px;
+  caret-color: red;
+}
+
+.line-input:disabled {
+  color: #777;
+}
+.finalNote {
+  color: #ffcc00;
+  text-decoration: underline rgb(179, 238, 42);
+}
 @keyframes blink {  
   0% {    
     background: #ffffff;  
