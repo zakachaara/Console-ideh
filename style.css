@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono'); 
+html {
+  display: flex;
+    height: 100vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
 body {  
   background: linear-gradient(45deg, #57003f 0%,#f57453 100%); 
   background-attachment: fixed;
@@ -8,13 +14,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 } 
 #container {  
-  display: flex;  
-  /* justify-content: center;  
-  align-items: center;   */
-  height: 100vh;
+  display: flex;
+    /* height: auto; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 } 
 #terminal {  
   width: 70vw;  
@@ -71,10 +78,13 @@ body {
 #terminal__body {  
   background: rgba(56, 4, 40, 0.9);  
   font-family: 'Ubuntu Mono';  
-  height: calc(100% - 30px);  
+  padding: 3px;  
+  height: 65vh;
   padding-top: 2px;  
   margin-top: -1px;
   overflow-y: auto;
+  scrollbar-color: #3b393d #393b39;
+    scrollbar-width: none;
 } 
 #terminal__prompt {  
   display: flex;
